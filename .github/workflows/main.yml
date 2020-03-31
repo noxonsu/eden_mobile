@@ -22,10 +22,12 @@ jobs:
       with:
        exec: |
         cordova platform add android && \
-        cordova build --no-telemetry
+        cordova build --no-telemetry && \
+        cp "$(find . -name '*.apk')" .
     - name: Show the files
       shell: bash
-      run: ls -a /github/workspace/platforms/android/
+      run: find . -name '*.apk'
+      
     - name: Publish GitHub Release
       uses: fnkr/github-action-ghr@v1
       env:
