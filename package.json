@@ -1,6 +1,6 @@
 {
   "name": "org.sahanafoundation.eden_mobile",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "displayName": "EdenMobile",
   "scripts": {
     "release": "git commit -am v%npm_package_version% && git tag v%npm_package_version% && git push && git push --tags"
