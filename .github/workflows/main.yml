@@ -17,16 +17,17 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-
     - name: Setup and run Cordova
       uses: oxr463/setup-cordova@0.0.1
       with:
        exec: |
         cordova platform add android && \
         cordova build --no-telemetry
-
+    - name: Show the files
+      shell: bash
+      run: ls -a .
     - name: Publish GitHub Release
       uses: fnkr/github-action-ghr@v1
       env:
-        GHR_PATH: app/app-debug.apk
+        GHR_PATH: platforms/android/app/build/outputs/apk/debug/app-debug.apk
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
