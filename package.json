@@ -1,9 +1,9 @@
 {
   "name": "org.sahanafoundation.eden_mobile",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "displayName": "EdenMobile",
   "scripts": {
-    "release": "git branch %npm_package_version% && git checkout %npm_package_version% && git commit -am v%npm_package_version% && git tag v%npm_package_version% && git push --tags"
+    "release": "git branch %npm_package_version% && git checkout %npm_package_version% && git commit -am v%npm_package_version% && git tag v%npm_package_version% && git push && git push --tags"
   },
   "cordova": {
     "platforms": [
