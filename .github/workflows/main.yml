@@ -28,7 +28,7 @@ jobs:
       shell: bash
       run: find . -name '*.apk'
       
-    - name: Publish GitHub Release
+    - name: Publish GitHub Release 2
       uses: fnkr/github-action-ghr@v1
       env:
         GHR_PATH: platforms/android/app/build/outputs/apk/debug/app-debug.apk
