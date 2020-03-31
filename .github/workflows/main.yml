@@ -17,6 +17,7 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
+    
     - name: Setup and run Cordova
       uses: oxr463/setup-cordova@0.0.1
       with:
@@ -24,9 +25,10 @@ jobs:
         cordova platform add android && \
         cordova build --no-telemetry && \
         cp "$(find . -name '*.apk')" .
+        
     - name: Show the files
       shell: bash
-      run: find . -r -name '*.apk'
+      run: find . -print | grep -i \.apk
       
     - name: Publish GitHub Release 2
       uses: fnkr/github-action-ghr@v1
