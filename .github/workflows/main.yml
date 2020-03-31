@@ -8,20 +8,6 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '10.x'
-    - run: npm install
-    - run: webpack 
-    
-    - name: Update package list
-      run: sudo apt update
-    
-    - name: Install gradle
-      run: sudo apt install gradle
-    
-    - name: Install jq
-      run: sudo apt install jq
       
     - name: Install cordova
       run: |
